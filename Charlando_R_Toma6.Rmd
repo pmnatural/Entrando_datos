@@ -5,23 +5,40 @@ date: "6/14/2020"
 output: html_document
 ---
 
-## Datos ordenados
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## El paquete **_tidyverse_**
 
 ![Datos ordenados](https://github.com/pmnatural/Entrando_datos/blob/master/tidy-1.svg)
 
-En inglés se usa el adjetivo _tidy_  para señalar que algo esta ordenado, y si lo usamos para datos, hablamos de un conjunto de datos con una estructura determinada donde:
+En inglés se usa el adjetivo _tidy_  para señalar que algo esta ordenado, o sea estructurado de una cierta manera.
+
+El paquete _tidyverse_ ayuda a trabajar de manera ordenada con los datos. 
+
+ _tidyverse_ está compuesto por muchos paquetes distintos, cada uno con funciones especiales para ayudar a ordenar y analizar datos de manera ordenada. 
+
+Cargamos ahora _tidyverse_ y vemos qué paquetes trae:
+
+```{r tidiverse}
+library(tidyverse)
+
+```
+
+
+
+
+
+, y si lo usamos para datos, hablamos de un conjunto de datos con una estructura determinada donde:
 
 Cada variable debe tener su propia columna.
 Cada observación debe tener su propia fila.
 Cada valor debe tener su propia celda.
 
+Miremos el dataset _iris_ que viene con R
 
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-
-library(tidyverse)
-```
 
 ## R Markdown
 
