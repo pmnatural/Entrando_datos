@@ -50,14 +50,19 @@ Si unimos con lo anterior,
 
 ## Importando datos tabulares con el paquete _readr_
 
-- Lee archivos de texto planos formateados de distinta manera
+- Lee archivos de texto planos formateados de distinta manera (hay que ver separador de columnas y decimales)
 - deduce el tipo de dato de cada columna y lo imprime
 - Devuelve siempre una tibble
 - Tiene funciones especiales para resolver problemas de codificación
 
-Vamos a importar el dataset  .cvs pero antes lo miramos
-```{r}
 
+Vamos a importar el dataset  terremotos.cvs pero antes lo miramos para ver los decimales y las columnas.
+
+Si las columnas estan separadas con **,**  y los decimales con **.**  usamos `read_csv`
+
+
+```{r}
+T1 <- read_csv("terremotos.csv")
 ```
 
 
