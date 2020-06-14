@@ -13,16 +13,13 @@ knitr::opts_chunk$set(echo = TRUE)
 ## El paquete **_tidyverse_**
 
 En inglés se usa el adjetivo _tidy_  para señalar que algo esta ordenado, o sea estructurado de una cierta manera.
-
 El paquete _tidyverse_ ayuda a trabajar de manera ordenada con los datos. 
-
  _tidyverse_ está compuesto por muchos paquetes distintos, cada uno con funciones especiales para ayudar a ordenar y analizar datos de manera ordenada. 
 
 Cargamos ahora _tidyverse_ y vemos qué paquetes trae:
 
 ```{r tidyverse}
 library(tidyverse)
-
 ```
 
 ## Datos ordenados
@@ -48,39 +45,50 @@ iris
 Si unimos con lo anterior,  
 - cada dataset a usar dentro de un mismo análisis debe estar en su propia tibble.
 
-## Importando datos tabulares con el paquete _readr_
+## El paquete _readr_
 
 - Lee archivos de texto planos formateados de distinta manera (hay que ver separador de columnas y decimales)
 - deduce el tipo de dato de cada columna y lo imprime
 - Devuelve siempre una tibble
 - Tiene funciones especiales para resolver problemas de codificación
 
+##  Importando datos tabulares segun su delimitador
 
-Vamos a importar el dataset  terremotos.cvs pero antes lo miramos para ver los decimales y las columnas.
+Vamos a importar el dataset  terremotos.cvs pero antes lo miramos para ver como estan separados los decimales y las columnas.
 
-Si las columnas estan separadas con **,**  y los decimales con **.**  usamos `read_csv`
+Si las columnas estan delimitadas con ","  y los decimales con  ".",  usamos `read_csv`
 
-
-```{r}
+```{r cvs}
 T1 <- read_csv("terremotos.csv")
 ```
-
+Vemos como entro datos
+```{r T1}
+T1
+```
 
 ## Funciones para leer achivos
-- read_csv() 
-- read_csv2() 
-- read_tsv()
-- read_delim() 
-- read_tsv() 
-- read_fwf() 
-- read_table() 
-- read_log() 
+- read_csv()      columnas con , decimal con .
+- read_csv2()     columnas con ; decimal con ,
+- read_delim()    columnas con delimitador personalizado, ej delim = "|"
 
+```{r csv2}
+T2 <- read_csv2("terremotos2.csv")
+```
+
+```{r T2}
+T2
+```
+
+```{r delim}
+#T3 <- read_delim("Terremotosb.prn", delim = )
+```
+```{r T3}
+#T3
+```
 ## Funciones para escribir archivos planos
 
 - write_csv(challenge, "challenge.csv") 
-- write_rds() 
-- read_rds()
+
 
 ¿Cuál es la diferencia entre read_csv() y read_csv2()?
 
