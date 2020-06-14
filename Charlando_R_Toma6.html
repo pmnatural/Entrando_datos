@@ -578,7 +578,7 @@ summary {
 ##   magType = col_character(),
 ##   id = col_character()
 ## )</code></pre>
-<p>Vemos como entro datos</p>
+<p>Vemos como entraron los datos</p>
 <pre class="r"><code>T1</code></pre>
 <pre><code>## # A tibble: 51 x 7
 ##    time                latitude longitude depth   mag magType id          
@@ -629,19 +629,51 @@ summary {
 ##  9 2020-06-14 17:28:38     24.9     123.   10    4.6  mb      us6000abqq  
 ## 10 2020-06-14 16:52:43     18.0     -67.0   6    2.79 md      pr2020166016
 ## # … with 41 more rows</code></pre>
-<pre class="r"><code>#T3 &lt;- read_delim(&quot;Terremotosb.prn&quot;, delim = )</code></pre>
-<pre class="r"><code>#T3</code></pre>
+<pre class="r"><code>T3 &lt;- read_delim(&quot;Terremotos3.txt&quot;, delim = &quot;|&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   time = col_datetime(format = &quot;&quot;),
+##   latitude = col_double(),
+##   longitude = col_double(),
+##   depth = col_double(),
+##   mag = col_double(),
+##   magType = col_character(),
+##   id = col_character()
+## )</code></pre>
+<pre class="r"><code>T3</code></pre>
+<pre><code>## # A tibble: 51 x 7
+##    time                latitude longitude depth   mag magType id          
+##    &lt;dttm&gt;                 &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;       
+##  1 2020-06-14 21:23:20     49.2     158.   10    5.4  mww     us6000abte  
+##  2 2020-06-14 21:22:17     17.9     -66.9  13    3.09 md      pr2020166020
+##  3 2020-06-14 19:26:20     24.9     123.   10    5.2  mww     us6000abry  
+##  4 2020-06-14 19:06:59     19.1     -67.6   7    3.82 md      pr2020166019
+##  5 2020-06-14 18:37:42     24.8     123.   10    4.6  mb      us6000abrd  
+##  6 2020-06-14 18:15:11     24.9     123.   10    4.8  mb      us6000abr4  
+##  7 2020-06-14 18:12:34     17.9     -66.8  10    3.33 md      pr2020166018
+##  8 2020-06-14 18:06:01     27.8      53.4  10.8  5.1  mww     us6000abr2  
+##  9 2020-06-14 17:28:38     24.9     123.   10    4.6  mb      us6000abqq  
+## 10 2020-06-14 16:52:43     18.0     -67.0   6    2.79 md      pr2020166016
+## # … with 41 more rows</code></pre>
+</div>
+<div id="perlitas" class="section level2">
+<h2>Perlitas</h2>
+<ul>
+<li>skip = n saltea n lineas antes de empezar a leer</li>
+<li>n_max = n solo lee n filas</li>
+<li>col_names = FALSE le pone nombres de columna genericos a las filas</li>
+<li>na = “.” si donde no tenemos datos hay un . rellena el valor con NA</li>
+</ul>
 </div>
 <div id="funciones-para-escribir-archivos-planos" class="section level2">
 <h2>Funciones para escribir archivos planos</h2>
+<p>Son similares a las de leer</p>
 <ul>
-<li>write_csv(challenge, “challenge.csv”)</li>
+<li>write_csv()</li>
+<li>write_csv2()</li>
+<li>write_delim()</li>
 </ul>
-<p>¿Cuál es la diferencia entre read_csv() y read_csv2()?</p>
-<p>read_csv usa . como decimal y , como separador de elementos<br />
-read_csv2 usa , como decimal y ; como separador de elementos</p>
-<p>¿Qué función utilizarías para leer un archivo donde los campos están separados con “|”?</p>
-<p><code>read_delim(file, delim = &quot;|&quot;)</code></p>
+<pre class="r"><code>write_delim(T3, &quot;Terremotos3.txt&quot;, delim = &quot;|&quot;, na = &quot;NA&quot;, append = FALSE)</code></pre>
 </div>
 
 

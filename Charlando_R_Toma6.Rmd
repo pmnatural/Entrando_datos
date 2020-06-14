@@ -61,7 +61,7 @@ Si las columnas estan delimitadas con ","  y los decimales con  ".",  usamos `re
 ```{r cvs}
 T1 <- read_csv("terremotos.csv")
 ```
-Vemos como entro datos
+Vemos como entraron los datos
 ```{r T1}
 T1
 ```
@@ -80,23 +80,31 @@ T2
 ```
 
 ```{r delim}
-#T3 <- read_delim("Terremotosb.prn", delim = )
+T3 <- read_delim("Terremotos3.txt", delim = "|")
 ```
 ```{r T3}
-#T3
+T3
 ```
+## Perlitas
+
+- skip = n           saltea n lineas antes de empezar a leer
+- n_max = n          solo lee n filas
+- col_names = FALSE  le pone nombres de columna genericos a las filas
+- na = "."           si donde no tenemos datos hay un . rellena el valor con NA
+
 ## Funciones para escribir archivos planos
 
-- write_csv(challenge, "challenge.csv") 
+Son similares a las de leer 
+
+- write_csv()
+- write_csv2()
+- write_delim()
+
+```{r}
+write_delim(T3, "Terremotos3.txt", delim = "|", na = "NA", append = FALSE)
+```
 
 
-¿Cuál es la diferencia entre read_csv() y read_csv2()?
 
-read_csv usa . como decimal y , como separador de elementos  
-read_csv2 usa , como decimal y ; como separador de elementos 
-
-¿Qué función utilizarías para leer un archivo donde los campos están separados con “|”?
-
-`read_delim(file, delim = "|")`
 
 
