@@ -28,6 +28,7 @@ library(tidyverse)
 ## Datos ordenados
 
 Cuando hablamos de datos en tablas, estos datos están ordenados, _tidy data_, si y sólo si:
+
 - Cada variable debe tener su propia columna.
 - Cada observación debe tener su propia fila.
 - Cada valor debe tener su propia celda.
@@ -38,33 +39,51 @@ Cuando hablamos de datos en tablas, estos datos están ordenados, _tidy data_, s
 ## Tibbles
 
 Para las tablas _tidyverse_ usa **_tibble_** que es un dataframe ordenado.
-Miremos el dataset _iris_ que viene con R y descubramos algunas diferencias:
+Miremos el dataset _iris_ que viene con R y descubramos sus particularidades:
 
 ```{r iris}
 iris
 ```
 
+Si unimos con lo anterior,  
+- cada dataset a usar dentro de un mismo análisis debe estar en su propia tibble.
 
+## Importando datos tabulares con el paquete _readr_
 
-## Los datos _internos_ están ordenados
+- Lee archivos de texto planos formateados de distinta manera
+- deduce el tipo de dato de cada columna y lo imprime
+- Devuelve siempre una tibble
+- Tiene funciones especiales para resolver problemas de codificación
 
-Los datos que vienen con R o con paquetes de R est
-## R Markdown
+Vamos a importar el dataset  .cvs pero antes lo miramos
+```{r}
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
+## Funciones para leer achivos
+- read_csv() 
+- read_csv2() 
+- read_tsv()
+- read_delim() 
+- read_tsv() 
+- read_fwf() 
+- read_table() 
+- read_log() 
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+## Funciones para escribir archivos planos
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+- write_csv(challenge, "challenge.csv") 
+- write_rds() 
+- read_rds()
+
+¿Cuál es la diferencia entre read_csv() y read_csv2()?
+
+read_csv usa . como decimal y , como separador de elementos  
+read_csv2 usa , como decimal y ; como separador de elementos 
+
+¿Qué función utilizarías para leer un archivo donde los campos están separados con “|”?
+
+`read_delim(file, delim = "|")`
+
+
