@@ -1,2 +1,3 @@
 # Entrando_datos
-Una introducción a readr
+Una introducción a readr...
+y algo más
